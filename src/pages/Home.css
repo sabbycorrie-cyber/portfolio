@@ -1,0 +1,125 @@
+.home-page {
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    background: #0f1117;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 40px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    flex: 1.5;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero-content h2 {
+    color: #d1d5db;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.hero-content p {
+    color: #b0b0b0;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.hero-content p a {
+    color: #d6ff8f;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(214,255,143,0.5);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 34px 0 10px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #d6ff8f, #c7b8ff);
+    color: #111318;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196,181,253,0.3);
+}
+
+.hero-button.ghost {
+    background: transparent;
+    color: #d6ff8f;
+    border: 2px solid #d6ff8f;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.strengths {
+    margin-top: 40px;
+}
+
+.strengths h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.strengths ul {
+    color: white;
+    padding-left: 20px;
+}
+
+.strengths li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        padding: 34px 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+}

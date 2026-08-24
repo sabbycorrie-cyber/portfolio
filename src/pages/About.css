@@ -1,0 +1,121 @@
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-card {
+    background: #0f1117;
+    color: white;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 30px auto;
+}
+
+.code-header {
+    background: #1f2937;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.code-header span {
+    color: white;
+}
+
+/* The three traffic-light dots. These had no size before,
+   so nothing was showing in the window bar. */
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.dots span:nth-child(1) { background: #ff5f57; }
+.dots span:nth-child(2) { background: #febc2e; }
+.dots span:nth-child(3) { background: #28c840; }
+
+.code-window {
+    background: #161b22;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.code-window pre {
+    margin: 0;
+    padding: 25px;
+    color: #d1d5db;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 17px;
+    line-height: 2;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #b0b0b0;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.about-link {
+    color: #d6ff8f;
+    font-weight: 700;
+}
+
+.about-link:hover {
+    border-bottom: 1px solid #d6ff8f;
+}
+
+.keyword {
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.string {
+    color: #b8f28f;
+}
+
+.variable {
+    color: #d6ff8f;
+}
+
+.number {
+    color: #c084fc;
+}
+
+.comment {
+    color: #6b7280;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        padding: 30px 22px;
+    }
+
+    .about-content h2 {
+        font-size: 26px;
+    }
+
+    .code-window pre {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+}

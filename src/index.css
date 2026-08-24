@@ -1,106 +1,56 @@
-/* Background Color */
-body {
-    background-color: #f5f7fa;
+* {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+body {
     min-height: 100vh;
-    padding-bottom: 80px;
+    background:
+        linear-gradient(
+            135deg,
+            #cfc5ff,
+            #c2b5ff,
+            #b8a8ff
+        );
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
 }
 
-.page-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    text-align: center;
+a {
+    text-decoration: none;
 }
 
-.about-content {
-    max-width: 700px;
-}
-
-.about-content h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.about-subtitle {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #2c3e50;
-}
-
-/* Center Contents */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-.profile {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow:0 8px 20px rgba (0,0,0,0.1);
-    max-width: 300px;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-}
-
-.tagline {
-    font-size: 16px;
-    color: #888;
-    margin-bottom: 25px;
-    letter-spacing: 0.5px;
-}
-
-.project-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.project-btn {
-    background-color: #1e1e1e;
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
+button {
     cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
-.project-btn:hover {
-    background-color: #333;
-    transform: (-2px);
+img {
+    max-width: 100%;
 }
 
-.portfolio-description {
-    font-size: 16px;
-    color: #555;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    max-width: 600px;
-    text-align: center;
-    line-height: 1.5;
+.page {
+    min-height: 100vh;
+}
+
+/* Typed text was transparent here, which made the search box look
+   broken. It now inherits the readable colour set in Project.css. */
+.search-bar {
+    background: white;
+    font-size: 18px;
+    caret-color: #000000;
+}
+
+.search-bar::placeholder {
+    color: #888;
+}
+
+/* Keyboard users need to see where they are */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #d6ff8f;
+    outline-offset: 3px;
 }

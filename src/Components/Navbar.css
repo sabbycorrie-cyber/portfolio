@@ -4,14 +4,17 @@
     padding: 15px 0;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 40px;
     list-style: none;
-    padding: 0;
+    padding: 0 15px;
     margin: 0;
 }
 
@@ -20,9 +23,39 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    transition:0.3s;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-color: #00bcd4;
+    color: #00bcd4;
+}
+
+/* Current page */
+.nav-links a.active {
+    color: #b8f28f;
+}
+
+/* The one link that should stand out */
+.nav-links a.nav-cta {
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #d6ff8f, #c7b8ff);
+    color: #111318;
+    font-weight: 700;
+}
+
+.nav-links a.nav-cta:hover {
+    color: #111318;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(196,181,253,0.35);
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
 }

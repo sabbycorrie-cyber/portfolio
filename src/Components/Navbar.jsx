@@ -1,24 +1,46 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar () {
+/* NavLink adds an "active" class on the current route, so the nav
+   always shows where you are. */
+function Navbar() {
+    const linkClass = ({ isActive }) => (isActive ? "active" : undefined);
+
     return (
         <nav className="navbar">
             <ul className="nav-links">
-            <li>
-            <Link to="/">Home</Link>
-            </li>
+                <li>
+                    <NavLink to="/" className={linkClass} end>
+                        Home
+                    </NavLink>
+                </li>
 
-            <li>
-            <Link to="/About">About</Link>
-            </li>
+                <li>
+                    <NavLink to="/about" className={linkClass}>
+                        About
+                    </NavLink>
+                </li>
 
-            <li>
-            <Link to="/Portfolio">Portfolio</Link>
-            </li>
+                <li>
+                    <NavLink to="/skills" className={linkClass}>
+                        Skills
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/portfolio" className={linkClass}>
+                        Portfolio
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/services" className={linkClass}>
+                        What I Do
+                    </NavLink>
+                </li>
             </ul>
         </nav>
     );
 }
 
-export default Navbar; 
+export default Navbar;

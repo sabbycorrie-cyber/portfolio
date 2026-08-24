@@ -9,12 +9,46 @@ function Popup({ project, closePopup }) {
                 <h2>{project.name}</h2>
                 <img src={project.image} alt={project.name} />
 
-                <p><strong>Tech:</strong> {project.tech}</p>
-                <p><strong>What it does:</strong> {project.what}</p>
-                <p><strong>What I learned:</strong> {project.learned} </p>
-                <p><strong>Challenges:</strong> {project.challenges} </p>
+                <div className="project-section">
+                    <h3>Overview</h3>
+                    <p>{project.overview}</p>
+                </div>
 
-                <a href={project.github} target="_blank" rel="noreferrer">View on GitHub</a>
+                <div className="project-section">
+                    <h3>Tech Stacks</h3>
+                    <p>{project.tech}</p>
+                </div>
+
+                {project.role && (
+                    <div className="project-section">
+                        <h3>My Role</h3>
+                        <p>{project.role}</p>
+                    </div>
+                )}
+
+                {project.impact && (
+                    <div className="project-section">
+                        <h3>Impact</h3>
+                        <p>{project.impact}</p>
+                    </div>
+                )}
+
+                <div className="project-section">
+                    <h3>Highlights</h3>
+                    <ul>
+                        {project.highlights.map((highlight, index) => (
+                        <li key={index}>{highlight}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                        View Code on GitHub
+                    </a>
 
             </div>
         </div>

@@ -74,7 +74,7 @@ function About() {
 
 <span className="keyword">const</span>{" "}
 <span className="variable">howIBuild</span> ={" "}
-<span className="string">"Vibe coding, then read every line of it"</span>;
+<span className="string">"Classic coding and vibe coding, hand in hand"</span>;
 
 {"\n\n"}
 
@@ -118,12 +118,21 @@ function About() {
                     </p>
 
                     <p>
-                        I vibe code, and I'm not quiet about it. AI tooling is
-                        how I move fast, but nothing ships that I haven't read,
-                        run and understood. The security policies, the API-key
-                        restrictions and the launch checklist behind Guess246
-                        exist because I went looking for what could break, not
-                        because a prompt produced them.
+                        I build with both hands: classic coding and vibe coding,
+                        together. The course gave me the fundamentals through
+                        assignments and projects written line by line, so I set
+                        the foundation of a build myself and then finish it with
+                        AI in the loop. Because I work in languages I already
+                        know, I read what comes back and judge it instead of
+                        trusting it.
+                    </p>
+
+                    <p>
+                        The combination is the point. It is faster than coding
+                        alone and far more durable than prompting alone, and it
+                        makes work that bends when it needs to. AI is going to
+                        keep showing up in this field, so I would rather build
+                        with it than around it.
                     </p>
 
                     <p>

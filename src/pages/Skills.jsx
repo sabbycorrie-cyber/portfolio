@@ -74,7 +74,7 @@ function Skills() {
                 </div>
 
                 <p className="skills-lead">
-                    I started on the front end and kept going until the whole
+                    Trained on the front end, then kept going until the whole
                     thing shipped, which meant learning the database, the API
                     keys, the deploy and the security that sits behind a site
                     people actually use.
@@ -97,24 +97,34 @@ function Skills() {
                 ))}
 
                 <section className="skills-honesty">
-                    <h2>How I build: vibe coding</h2>
+                    <h2>How I build: classic coding and vibe coding</h2>
 
                     <p>
-                        I vibe code. I work with AI tooling the same way I work
-                        with any other tool in the stack: describing what I want,
-                        moving fast through the repetitive parts, and thinking
-                        out loud against something that answers back. It's how I
-                        got from a class project to a live app with a database
-                        behind it in a matter of months.
+                        I do both, and the blend is deliberate. The foundation is
+                        trained: a front-end certification, a long run of
+                        coursework and assignments, and my own projects written
+                        by hand. That is what lets me set the structure of a
+                        build myself, choose the architecture, and know what a
+                        piece of code is doing before it runs.
                     </p>
 
                     <p>
-                        What ships is still code I've read, run and understood. I
-                        decide the architecture, I debug it myself, and I own it
-                        when it breaks. Guess246 has Row Level Security policies,
-                        restricted API keys, quota caps and a written launch
-                        checklist because I went looking for what could go wrong,
-                        not because a prompt handed them to me.
+                        From there I finish through vibe coding. I work in
+                        languages I already know, so I read what comes back and
+                        judge it rather than trust it. I catch what is wrong,
+                        keep what is right, and own the result. Guess246 has Row
+                        Level Security policies, restricted API keys, quota caps
+                        and a written launch checklist because I knew to go
+                        looking for what could go wrong.
+                    </p>
+
+                    <p>
+                        AI is not going away, and I would rather build with it
+                        than around it. Classic coding supplies the judgement,
+                        AI supplies the speed, and together they produce work
+                        that is stronger, quicker to make and easier to change
+                        than either approach on its own. That is modern
+                        development, and it is how I intend to keep working.
                     </p>
                 </section>
 

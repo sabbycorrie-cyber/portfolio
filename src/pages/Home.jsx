@@ -57,8 +57,8 @@ function Home() {
                                 to a demo
                             </li>
                             <li>
-                                Vibe coding: fast delivery, with code I've read
-                                and can defend
+                                Classic coding and vibe coding together, with
+                                code I can explain and defend
                             </li>
                             <li>Project leadership and collaboration</li>
                             <li>

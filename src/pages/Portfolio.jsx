@@ -12,7 +12,7 @@ function Portfolio() {
                 <h1>Featured Projects</h1>
 
                 <p className="portfolio-description">
-                    From a static Sass site to a live React app running on
+                    From a first browser game to a live React app running on
                     Postgres with real-time multiplayer. Work that shows
                     both the design side and the engineering behind it.
                 </p>

@@ -59,18 +59,6 @@ function ProjectPage() {
                 "Balancing functionality with design consistency, building navigation and project filtering, and keeping the component structure scalable as the portfolio grew.",
             cardClass: "purple-card",
         },
-        {
-            name: "Genesis Design",
-            github: "https://github.com/sabbycorrie-cyber/genesis-design/tree/main",
-            demo: "",
-            tech: "HTML, CSS, Sass, Flexbox, CSS Grid",
-            what: "A multi-page responsive website with navigation, a gallery and a contact form, built to match a supplied layout and hold up across browsers.",
-            learned:
-                "How to structure a full website across multiple pages, use Sass to organise and reuse styles, and apply Flexbox and Grid to build layouts that respond properly.",
-            challenges:
-                "Keeping the layout consistent between pages and improving responsiveness while working across a lot of separate files.",
-            cardClass: "blue-card",
-        },
     ];
 
     const filteredProject = project.filter(
@@ -91,9 +79,9 @@ function ProjectPage() {
             </button>
 
             <p className="portfolio-description">
-                Front-end work from a static Sass site through to a production
-                React app with a Postgres backend, real-time multiplayer and a
-                live API. Search by name or technology.
+                React work from a first browser game through to a production app
+                with a Postgres backend, real-time multiplayer and a live API.
+                Search by name or technology.
             </p>
 
             <div

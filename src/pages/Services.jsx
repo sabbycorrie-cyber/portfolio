@@ -107,12 +107,14 @@ function Services() {
 
                 <div className="why-grid">
                     <div className="why-item">
-                        <h3>I vibe code, and I read what comes out</h3>
+                        <h3>Classic coding and vibe coding, together</h3>
                         <p>
-                            AI tooling is how I move fast. Reviewing, testing
-                            and understanding every line before it ships is how
-                            I keep it honest. I can walk through any decision in
-                            my codebase and say why it's there.
+                            The fundamentals are trained: a front-end
+                            certification and a lot of hands-on projects. I set
+                            the foundation of a build myself, then finish it with
+                            AI in the loop, reading and judging what comes back
+                            because it's in languages I know. Judgement from the
+                            training, speed from the tooling.
                         </p>
                     </div>
 

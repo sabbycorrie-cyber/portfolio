@@ -20,18 +20,77 @@
     line-height: 1.6;
 }
 
+/* The card IS the artwork: full-bleed art, a scrim rising from the
+   bottom, and the text living on top of the image. */
 .project-card {
     border-radius: 24px;
-    padding: 28px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     color: white;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     position: relative;
     text-align: left;
-    box-shadow: 0 0 20px rgba(255,255,255,0.08);
-    min-height: 620px;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 540px;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 0 26px var(--glow, rgba(255,255,255,0.1));
+}
+
+.card-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    z-index: -3;
+    filter: saturate(0.85);
+    transition: transform 0.7s ease;
+}
+
+.project-card:hover .card-art {
+    transform: scale(1.06);
+}
+
+.card-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(
+        180deg,
+        rgba(6,8,14,0.08) 0%,
+        rgba(6,8,14,0.55) 34%,
+        rgba(6,8,14,0.93) 56%,
+        rgba(6,8,14,0.98) 100%
+    );
+}
+
+/* At rest a near-solid veil sits over the art, so the app's own
+   logo and screens read as soft shadows behind the text. Hovering
+   lifts the veil and the artwork lights up. */
+.card-veil {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(6, 8, 14, 0.72);
+    transition: opacity 0.5s ease;
+}
+
+.project-card:hover .card-veil,
+.project-card:focus-within .card-veil {
+    opacity: 0.18;
+}
+
+.card-body {
+    padding: 24px 26px 22px;
+}
+
+/* When the build story is open the text reaches the top of the card,
+   so clear space for the pinned badge */
+.project-card:has(.card-more[open]) .card-body {
+    padding-top: 64px;
 }
 
 .project-card:hover {
@@ -39,26 +98,85 @@
     z-index: 10;
 }
 
+/* Cards float up one after another when the page loads */
+@media (prefers-reduced-motion: no-preference) {
+    .project-card {
+        opacity: 0;
+        animation: cardRise 0.55s ease-out forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.05s; }
+    .project-card:nth-child(2) { animation-delay: 0.15s; }
+    .project-card:nth-child(3) { animation-delay: 0.25s; }
+    .project-card:nth-child(4) { animation-delay: 0.35s; }
+}
+
+@keyframes cardRise {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .project-card h3 {
-    color: #111318;
+    color: var(--accent, #fff);
     font-size: 30px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .project-card p {
-    color: #1f2939;
-    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    font-size: 14.5px;
     font-weight: 400;
-    margin-top: 14px;
+    margin-top: 10px;
     line-height: 1.6;
 }
 
-/* Badge on the flagship card */
-.project-badge {
-    align-self: flex-start;
+.project-card p strong {
+    color: #fff;
+}
+
+/* "The build story" expandable, so the card stays mostly art */
+.card-more {
+    margin-top: 12px;
+}
+
+.card-more summary {
+    list-style: none;
+    cursor: pointer;
     display: inline-block;
-    margin-bottom: 14px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--accent, rgba(255,255,255,0.4));
+    color: var(--accent, #fff);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.card-more summary::-webkit-details-marker { display: none; }
+
+.card-more summary:hover,
+.card-more[open] summary {
+    background: var(--accent, #fff);
+    color: #0b0f17;
+}
+
+.card-more summary:focus-visible {
+    outline: 3px solid var(--accent, #d6ff8f);
+    outline-offset: 3px;
+}
+
+/* Badge on the flagship card, pinned over the cover art */
+.project-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
     padding: 6px 14px;
     border-radius: 999px;
     background: rgba(17,19,24,0.85);
@@ -72,42 +190,85 @@
 /* "Co-founder & developer" line under the title */
 .role {
     margin-top: 0 !important;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgba(17,19,24,0.75) !important;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65) !important;
 }
 
-.green-card {
-    background: #b8f28f;
-    color: #111318;
-    box-shadow: 0 0 25px rgba(184,242,143,.7);
+/* The first doodle: a plain dark card, text first, with the
+   screenshot tucked under the writing like a photo in an album */
+.project-card.v-humble {
+    background: #0f1117;
+    justify-content: flex-start;
 }
 
-.purple-card {
-    background: #c4b5fd;
-    color: #111318;
-    box-shadow: 0 0 20px rgba(196,181,253,.7);
+.card-doodle {
+    margin: 16px 0 4px;
 }
 
-.blue-card {
-    background: #7dd3fc;
-    color: #111318;
-    box-shadow: 0 0 20px rgba(96,165,250,.7);
+.card-doodle img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    transform: rotate(-1.6deg);
+    transition: transform 0.4s ease;
+    display: block;
 }
 
-/* Bajan gold, used for Guess246 */
-.gold-card {
-    background: #ffd98a;
-    color: #111318;
-    box-shadow: 0 0 30px rgba(255,217,138,.75);
+.project-card.v-humble:hover .card-doodle img {
+    transform: rotate(0deg) scale(1.02);
 }
 
-/* Studio 246 */
-.teal-card {
-    background: #7ff2d9;
-    color: #111318;
-    box-shadow: 0 0 25px rgba(127,242,217,.7);
+.card-doodle figcaption {
+    margin-top: 10px;
+    font-size: 12.5px;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
 }
+
+/* The portfolio card: no image at all, just the site's own colour
+   scheme done as a quiet composition. Gradient ribbon up top, soft
+   lime and lavender glows, and the faint grid from the brand cards. */
+.project-card.v-abstract {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(214,255,143,0.14), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(199,184,255,0.18), transparent 48%),
+        #0f1117;
+    justify-content: flex-end;
+}
+
+.project-card.v-abstract::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(circle at 50% 20%, #000 15%, transparent 75%);
+    mask-image: radial-gradient(circle at 50% 20%, #000 15%, transparent 75%);
+    pointer-events: none;
+}
+
+.project-card.v-abstract::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #d6ff8f, #c7b8ff);
+}
+
+/* Each project keeps its colour as an accent and glow
+   instead of a solid background */
+.green-card  { --accent: #b8f28f; --glow: rgba(184,242,143,0.45); }
+.purple-card { --accent: #c4b5fd; --glow: rgba(196,181,253,0.45); }
+.blue-card   { --accent: #7dd3fc; --glow: rgba(96,165,250,0.45); }
+.gold-card   { --accent: #ffd98a; --glow: rgba(255,217,138,0.5); }
+.teal-card   { --accent: #7ff2d9; --glow: rgba(127,242,217,0.45); }
 
 /* Two across on desktop so four cards form a tidy 2x2 with no orphan */
 .project-grid {
@@ -138,10 +299,11 @@
 .tech {
     background: none;
     padding: 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    margin: 6px 0 20px;
-    opacity: .75;
+    margin: 4px 0 6px;
+    color: var(--accent, #b8f28f);
+    opacity: 0.95;
 }
 
 .description {
@@ -152,12 +314,11 @@
 }
 
 .project-links {
-    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 20px 12px 0;
+    padding: 18px 4px 0;
 }
 
 .project-links a:hover {
@@ -171,8 +332,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin-right: 30px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.85);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -195,18 +355,19 @@
 
 .demo-link {
     margin-left: auto;
-    padding: 8px 14px;
+    padding: 9px 18px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.45);
-    color: #111318;
+    background: var(--accent, rgba(255,255,255,0.8));
+    color: #0b0f17;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     transition: .3s ease;
 }
 
 .demo-link:hover {
-    background: rgba(255,255,255,0.8) !important;
+    filter: brightness(1.12);
+    background: var(--accent) !important;
 }
 
 .contact-footer {
@@ -307,6 +468,6 @@
         font-size: 36px;
     }
     .project-card {
-        min-height: 0;
+        min-height: 480px;
     }
 }

@@ -24,10 +24,31 @@
     font-weight: 600;
     font-size: 1.1rem;
     transition: 0.3s;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #00bcd4;
+}
+
+/* Underline that slides in from the left on hover.
+   The Hire Me pill opts out, since it has its own shape. */
+.nav-links a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #d6ff8f, #c7b8ff);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a:not(.nav-cta).active::after {
+    transform: scaleX(1);
 }
 
 /* Current page */

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Project.css";
 import githubIcon from "../assets/github-svgrepo-com.svg";
+import coverGuess246 from "../assets/covers/guess246.jpg";
+import coverStudio246 from "../assets/covers/studio246.jpg";
+import coverGuessGeo from "../assets/covers/guessgeo.jpg";
 
 function ProjectPage() {
     const [search, setSearch] = useState("");
@@ -11,6 +14,7 @@ function ProjectPage() {
         {
             name: "Guess246",
             featured: true,
+            cover: coverGuess246,
             role: "Co-founder & developer, Studio 246",
             github: "https://github.com/sabbycorrie-cyber/guessbarbados",
             demo: "https://guess246.vercel.app/",
@@ -24,11 +28,12 @@ function ProjectPage() {
         },
         {
             name: "Studio 246",
+            cover: coverStudio246,
             role: "Co-founder",
             github: "",
             demo: "https://studio-246.vercel.app/",
             tech: "React, Vite, Vercel, responsive design",
-            what: "The studio site for Studio 246, a Barbadian studio I co-founded that builds culturally grounded apps and games. It introduces the studio, presents the work that is live, and acts as the front door for everything we release.",
+            what: "The studio site for Studio 246, a Sweden-based studio I co-founded that builds culturally grounded apps and games with Barbadian roots. It introduces the studio, presents the work that is live, and acts as the front door for everything we release.",
             learned:
                 "Positioning technical work for a non-technical audience: writing copy that lands in one read, structuring a page so a visitor understands the studio in seconds, and compressing imagery so the site stays quick on slower connections.",
             challenges:
@@ -37,6 +42,8 @@ function ProjectPage() {
         },
         {
             name: "GuessGeo",
+            variant: "humble",
+            cover: coverGuessGeo,
             github: "https://github.com/sabbycorrie-cyber/guessgeo",
             demo: "https://guessgeo-woad.vercel.app/",
             tech: "React, JavaScript, Google Street View API, HTML, CSS",
@@ -49,6 +56,7 @@ function ProjectPage() {
         },
         {
             name: "React Portfolio",
+            variant: "abstract",
             github: "https://github.com/sabbycorrie-cyber/Portfolio-R1",
             demo: "",
             tech: "React 19, React Router, Vite, CSS",
@@ -110,41 +118,68 @@ function ProjectPage() {
                         {filteredProject.map((project) => (
                             <div
                                 key={project.name}
-                                className={`project-card ${project.cardClass}`}
+                                className={`project-card ${project.cardClass} v-${project.variant || "engulfed"}`}
                             >
+                                {!project.variant && (
+                                    <>
+                                        <img
+                                            className="card-art"
+                                            src={project.cover}
+                                            alt={`${project.name} start screen`}
+                                            loading="lazy"
+                                        />
+                                        <div className="card-scrim"></div>
+                                        <div className="card-veil"></div>
+                                    </>
+                                )}
+
                                 {project.featured && (
                                     <span className="project-badge">
                                         Flagship project
                                     </span>
                                 )}
 
-                                <h3>{project.name}</h3>
+                                <div className="card-body">
+                                    <h3>{project.name}</h3>
 
-                                {project.role && (
-                                    <p className="role">{project.role}</p>
-                                )}
+                                    {project.role && (
+                                        <p className="role">{project.role}</p>
+                                    )}
 
-                                <p className="tech">{project.tech}</p>
+                                    <p className="tech">{project.tech}</p>
 
-                                <p>
-                                    <strong>What it does:</strong>
-                                    <br />
-                                    {project.what}
-                                </p>
+                                    <p className="card-what">{project.what}</p>
 
-                                <p>
-                                    <strong>What I learned:</strong>
-                                    <br />
-                                    {project.learned}
-                                </p>
+                                    <details className="card-more">
+                                        <summary>The build story</summary>
 
-                                <p>
-                                    <strong>Challenges:</strong>
-                                    <br />
-                                    {project.challenges}
-                                </p>
+                                        <p>
+                                            <strong>What I learned:</strong>
+                                            <br />
+                                            {project.learned}
+                                        </p>
 
-                                <div className="project-links">
+                                        <p>
+                                            <strong>Challenges:</strong>
+                                            <br />
+                                            {project.challenges}
+                                        </p>
+                                    </details>
+
+                                    {project.variant === "humble" && (
+                                        <figure className="card-doodle">
+                                            <img
+                                                src={project.cover}
+                                                alt={`${project.name} start screen`}
+                                                loading="lazy"
+                                            />
+                                            <figcaption>
+                                                Where it started
+                                            </figcaption>
+                                        </figure>
+                                    )}
+
+                                    <div className="project-links">
                                     {project.github && (
                                         <a
                                             href={project.github}
@@ -171,6 +206,7 @@ function ProjectPage() {
                                             Live Demo
                                         </a>
                                     )}
+                                    </div>
                                 </div>
                             </div>
                         ))}

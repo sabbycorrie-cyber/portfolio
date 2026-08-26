@@ -18,7 +18,8 @@ function Home() {
                     </p>
 
                     <p>
-                        I build responsive web applications in React. The
+                        I have a big passion for learning and a real fascination
+                        with AI, and the toolset I am growing shows it. The
                         clearest example is{" "}
                         <a
                             href="https://guess246.vercel.app/"
@@ -27,7 +28,7 @@ function Home() {
                         >
                             Guess246
                         </a>
-                        , a live app with a Postgres backend, real-time
+                        , a live React app with a Postgres backend, real-time
                         multiplayer and 120+ real locations across Barbados.
                     </p>
 

@@ -101,6 +101,14 @@ function About() {
 <span className="string">
     "Create engaging, accessible and meaningful digital experiences"
 </span>;
+
+{"\n\n"}
+
+<span className="keyword">const</span>{" "}
+<span className="variable">bigDream</span> ={" "}
+<span className="string">
+    "A device of my own, built for vulnerable communities"
+</span>;
 </pre>
                 </div>
 
@@ -110,8 +118,9 @@ function About() {
                     <p>
                         I certified in front-end development at Sundsgårdens
                         folkhögskola in June 2026 and have been building ever
-                        since. Studio 246, the Barbadian studio I co-founded, is
-                        where that shows: Guess246 started as a browser game and
+                        since. Studio 246, the Sweden-based studio I co-founded
+                        with Barbadian roots, is where that shows: Guess246
+                        started as a browser game and
                         turned into a production app with a Postgres database,
                         Row Level Security, real-time multiplayer rooms and a
                         Google Street View integration, installable as a PWA.
@@ -133,6 +142,33 @@ function About() {
                         makes work that bends when it needs to. AI is going to
                         keep showing up in this field, so I would rather build
                         with it than around it.
+                    </p>
+
+                    <p>
+                        I am early in this career, and I treat that as a
+                        strength. Curiosity is the engine: every project here
+                        started as an experiment, taught me something I did not
+                        know going in, and left the toolset a little bigger.
+                        That is the pace I intend to keep.
+                    </p>
+
+                    <h2>Where I'm heading</h2>
+
+                    <p>
+                        More applications, always with a purpose. I want to keep
+                        taking ideas from a sketch to something people actually
+                        use, and to keep stepping into territory I have not
+                        touched yet: a new stack, a new platform, a new kind of
+                        problem.
+                    </p>
+
+                    <p>
+                        The big dream sits further out: to one day design and
+                        code a device that is uniquely my own, built to benefit
+                        vulnerable communities. Studio 246 and its culturally
+                        grounded work is the first step on that road, and every
+                        project between here and there is practice with a
+                        direction.
                     </p>
 
                     <p>

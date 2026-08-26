@@ -77,7 +77,8 @@ function Skills() {
                     Trained on the front end, then kept going until the whole
                     thing shipped, which meant learning the database, the API
                     keys, the deploy and the security that sits behind a site
-                    people actually use.
+                    people actually use. This list is a snapshot, not a fence:
+                    it grows with every project.
                 </p>
 
                 {groups.map((group) => (

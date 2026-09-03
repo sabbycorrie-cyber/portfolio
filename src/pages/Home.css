@@ -1,12 +1,19 @@
+/* Sabantho's hand-drawn Lokono-Arawak inspired pattern, lifted
+   from its paper and printed straight onto the site's lavender
+   ground. The charcoal texture lives in the PNG's alpha. */
 .home-page {
-    max-width: 1200px;
     min-height: 100vh;
     padding: 20px;
-    margin: 0 auto;
+    background-image: url("../assets/indigenous-pattern.png");
+    background-size: 440px auto;
+    background-position: top center;
 }
 
 .hero-section {
-    background: #0f1117;
+    background: rgba(15, 17, 23, 0.96);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    max-width: 1160px;
     border-radius: 30px;
     display: flex;
     align-items: center;

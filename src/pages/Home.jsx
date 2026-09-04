@@ -12,9 +12,10 @@ function Home() {
                     <h2>Front-End Developer &amp; Co-founder of Studio 246</h2>
 
                     <p>
-                        Urban Indigenous developer whose experience navigating
-                        two worlds has shaped a creative, adaptable and
-                        thoughtful approach to problem-solving.
+                        A Barbadian and Guyanese Lokono-Arawak front-end
+                        developer, an urban Indigenous woman in tech whose
+                        experience navigating two worlds has shaped a creative,
+                        adaptable and thoughtful approach to problem-solving.
                     </p>
 
                     <p>
@@ -22,14 +23,15 @@ function Home() {
                         with AI, and the toolset I am growing shows it. The
                         clearest example is{" "}
                         <a
-                            href="https://guess246.vercel.app/"
+                            href="https://studio246.app/"
                             target="_blank"
                             rel="noreferrer"
                         >
                             Guess246
                         </a>
-                        , a live React app with a Postgres backend, real-time
-                        multiplayer and 120+ real locations across Barbados.
+                        , a React app with a Postgres backend, real-time
+                        multiplayer and 120+ real locations across Barbados, now
+                        heading to the app stores.
                     </p>
 
                     <div className="hero-actions">

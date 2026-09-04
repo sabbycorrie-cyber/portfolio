@@ -62,7 +62,7 @@ function About() {
 <span className="keyword">const</span>{" "}
 <span className="variable">shipped</span> = [
 {"\n"}
-{"  "}<span className="string">"Guess246: live, 120+ locations, multiplayer"</span>,
+{"  "}<span className="string">"Guess246: built, 120+ locations, multiplayer"</span>,
 {"\n"}
 {"  "}<span className="string">"Studio 246: the studio site"</span>,
 {"\n"}

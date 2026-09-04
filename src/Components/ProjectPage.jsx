@@ -17,7 +17,8 @@ function ProjectPage() {
             cover: coverGuess246,
             role: "Co-founder & developer, Studio 246",
             github: "https://github.com/sabbycorrie-cyber/guessbarbados",
-            demo: "https://guess246.vercel.app/",
+            demo: "https://studio246.app/",
+            demoLabel: "See it at Studio 246",
             tech: "React 19, Vite, Supabase (Postgres, RLS, Realtime), Google Street View Static API, PWA",
             what: "A geography game built on 120+ real Barbadian locations across all 11 parishes. Players are dropped into a Street View photo and have to name the road and parish before the clock runs out. Three difficulty tiers, scoring with time and streak bonuses, per-difficulty leaderboards, shareable challenge links, pass-and-play, and live multiplayer rooms.",
             learned:
@@ -31,7 +32,7 @@ function ProjectPage() {
             cover: coverStudio246,
             role: "Co-founder",
             github: "",
-            demo: "https://studio-246.vercel.app/",
+            demo: "https://studio246.app/",
             tech: "React, Vite, Vercel, responsive design",
             what: "The studio site for Studio 246, a Sweden-based studio I co-founded that builds culturally grounded apps and games with Barbadian roots. It introduces the studio, presents the work that is live, and acts as the front door for everything we release.",
             learned:
@@ -203,7 +204,7 @@ function ProjectPage() {
                                             rel="noreferrer"
                                             className="demo-link"
                                         >
-                                            Live Demo
+                                            {project.demoLabel || "Live Demo"}
                                         </a>
                                     )}
                                     </div>

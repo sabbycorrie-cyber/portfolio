@@ -68,7 +68,7 @@ function Services() {
                     live: the interface, the data behind it, and getting it
                     deployed and secured. The clearest example is{" "}
                     <a
-                        href="https://guess246.vercel.app/"
+                        href="https://studio246.app/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -121,10 +121,10 @@ function Services() {
                     <div className="why-item">
                         <h3>Shipped, not just built</h3>
                         <p>
-                            Guess246 is live, installable and handling real
-                            players: Row Level Security on the database,
-                            restricted API keys, quota caps, analytics. I know
-                            what finished actually means.
+                            Guess246 is built to production and installable: Row
+                            Level Security on the database, restricted API keys,
+                            quota caps, analytics. I know what finished actually
+                            means.
                         </p>
                     </div>
 

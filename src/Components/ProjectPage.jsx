@@ -5,6 +5,9 @@ import githubIcon from "../assets/github-svgrepo-com.svg";
 import coverGuess246 from "../assets/covers/guess246.jpg";
 import coverStudio246 from "../assets/covers/studio246.jpg";
 import coverGuessGeo from "../assets/covers/guessgeo.jpg";
+import coverIndigenous from "../assets/covers/indigenousconnect.jpg";
+import coverRestaurant from "../assets/covers/restaurantswipe.jpg";
+import coverTapir from "../assets/covers/tapirescape.jpg";
 
 function ProjectPage() {
     const [search, setSearch] = useState("");
@@ -43,7 +46,8 @@ function ProjectPage() {
         },
         {
             name: "Indigenous Connect",
-            variant: "abstract",
+            variant: "humble",
+            cover: coverIndigenous,
             role: "Co-founder & lead developer, Studio 246",
             github: "",
             demo: "https://indigenousconnect.vercel.app/",
@@ -57,7 +61,8 @@ function ProjectPage() {
         },
         {
             name: "Restaurant Swipe",
-            variant: "abstract",
+            variant: "humble",
+            cover: coverRestaurant,
             role: "Co-founder & lead developer, Studio 246",
             github: "",
             demo: "https://restaurantswipe.vercel.app/",
@@ -71,7 +76,8 @@ function ProjectPage() {
         },
         {
             name: "Tapir Escape",
-            variant: "abstract",
+            variant: "humble",
+            cover: coverTapir,
             role: "Co-founder & lead developer, Studio 246",
             github: "",
             demo: "https://tapir-escape.vercel.app/",
@@ -87,6 +93,7 @@ function ProjectPage() {
             name: "GuessGeo",
             variant: "humble",
             cover: coverGuessGeo,
+            caption: "Where it started",
             github: "https://github.com/sabbycorrie-cyber/guessgeo",
             demo: "https://guessgeo-woad.vercel.app/",
             tech: "React, JavaScript, Google Street View API, HTML, CSS",
@@ -213,12 +220,14 @@ function ProjectPage() {
                                         <figure className="card-doodle">
                                             <img
                                                 src={project.cover}
-                                                alt={`${project.name} start screen`}
+                                                alt={project.name}
                                                 loading="lazy"
                                             />
-                                            <figcaption>
-                                                Where it started
-                                            </figcaption>
+                                            {project.caption && (
+                                                <figcaption>
+                                                    {project.caption}
+                                                </figcaption>
+                                            )}
                                         </figure>
                                     )}
 

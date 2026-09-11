@@ -16,7 +16,7 @@ function ProjectPage() {
             featured: true,
             cover: coverGuess246,
             role: "Co-founder & developer, Studio 246",
-            github: "https://github.com/sabbycorrie-cyber/guessbarbados",
+            github: "",
             demo: "https://studio246.app/",
             demoLabel: "See it at Studio 246",
             tech: "React 19, Vite, Supabase (Postgres, RLS, Realtime), Google Street View Static API, PWA",
@@ -40,6 +40,48 @@ function ProjectPage() {
             challenges:
                 "Presenting a range of very different projects under one identity without the page turning into a list, and holding the layout together from phone to desktop.",
             cardClass: "teal-card",
+        },
+        {
+            name: "Indigenous Connect",
+            variant: "abstract",
+            role: "Co-founder & lead developer, Studio 246",
+            github: "",
+            demo: "https://indigenousconnect.vercel.app/",
+            tech: "React, JavaScript, Supabase, i18n (12 languages), responsive design",
+            what: "A sovereign digital space for Indigenous Peoples worldwide: community, friendship and professional ties, grounded in culture, safety and UNDRIP. Supports 12 languages, with data kept sovereign in the EU.",
+            learned:
+                "Building for many cultures and languages at once: internationalisation across 12 languages, and designing for safety, moderation and data sovereignty from the start.",
+            challenges:
+                "Making one space feel welcoming and safe across very different communities, and keeping the data sovereign within the EU.",
+            cardClass: "clay-card",
+        },
+        {
+            name: "Restaurant Swipe",
+            variant: "abstract",
+            role: "Co-founder & lead developer, Studio 246",
+            github: "",
+            demo: "https://restaurantswipe.vercel.app/",
+            tech: "React, JavaScript, Geolocation, responsive design",
+            what: "Tinder for restaurants: swipe yes, no or maybe through real places near you, and when you match with a meal the number to book a table is one tap away.",
+            learned:
+                "A swipe interface running on real data: geolocation, card gestures, saved lists, and turning a match into a single tap to act.",
+            challenges:
+                "Making the swipe feel instant and natural on a phone, and pulling in nearby places cleanly.",
+            cardClass: "coral-card",
+        },
+        {
+            name: "Tapir Escape",
+            variant: "abstract",
+            role: "Co-founder & lead developer, Studio 246",
+            github: "",
+            demo: "https://tapir-escape.vercel.app/",
+            tech: "React, JavaScript, HTML5 game, accessibility",
+            what: "A browser-based conservation game for the classroom. Guide a young tapir through the real threats facing South America's largest land mammal, then finish on its IUCN status and the grassroots funds working to save it. No install, playable on touch and keyboard.",
+            learned:
+                "Building a game loop in the browser that teaches without lecturing, and keeping it playable on both touch and keyboard.",
+            challenges:
+                "Balancing the game and the lesson so it stays fun while the facts land, and running the whole thing with nothing to download.",
+            cardClass: "blue-card",
         },
         {
             name: "GuessGeo",

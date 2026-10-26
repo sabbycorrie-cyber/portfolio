@@ -26,8 +26,7 @@
     color: white;
 }
 
-/* The three traffic-light dots. These had no size before,
-   so nothing was showing in the window bar. */
+/* window dots */
 .dots {
     display: flex;
     gap: 8px;
@@ -44,9 +43,7 @@
 .dots span:nth-child(2) { background: #febc2e; }
 .dots span:nth-child(3) { background: #28c840; }
 
-/* Soft coin flips, one dot after the other, then a long rest.
-   Wrapped in a motion query so it disables itself for anyone who
-   has asked their system for reduced motion. */
+/* coin flip, off when reduced motion is set */
 @media (prefers-reduced-motion: no-preference) {
     .dots span {
         animation: coinFlip 5.2s ease-in-out infinite;

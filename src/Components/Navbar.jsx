@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-/* NavLink adds an "active" class on the current route, so the nav
-   always shows where you are. */
 function Navbar() {
     const linkClass = ({ isActive }) => (isActive ? "active" : undefined);
 

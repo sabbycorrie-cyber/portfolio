@@ -25,7 +25,7 @@ function ProjectPage() {
             demo: "https://guess246.com/",
             demoLabel: "guess246.com",
             tech: "React 19, Vite, Supabase (Postgres, RLS, Realtime), Google Street View Static API, PWA",
-            what: "De Ultimate Bajan Road Test, out now on iPhone with Android next. Players are dropped onto one of 122 real Barbados roads across all 11 parishes and have seconds to name them. Get it right and the ground opens up: Bussa's uprising in 1816, the West India Regiments at the Garrison, the flag raised at midnight in 1966. Three difficulty tiers, leaderboards, challenge links and live multiplayer, with every fact researched and cited.",
+            what: "De Ultimate Bajan Road Test, out now on iPhone with Android next. Players get seconds to name one of 122 real Barbados roads across all 11 parishes, and every right answer opens the researched, cited history underneath. Difficulty tiers, leaderboards, challenge links and live multiplayer.",
             statsTitle: "Launch week, App Store Top Paid Trivia",
             stats: [
                 "#1 Barbados, every day since launch",
@@ -33,8 +33,7 @@ function ProjectPage() {
                 "#7 UK",
                 "#8 US, up from a #10 debut",
             ],
-            statsNote:
-                "Every rating so far: 5 stars. Week two under way.",
+            statsNote: "Every rating so far: 5 stars.",
             story: [
                 "I didn't learn the full story of Barbados in school. So we built a game that tells it.",
                 "More than nine in ten Barbadians are of African descent. Yet the history most of us were taught came largely from one side: the planters, the sugar, the trade and where it was shipped. Slavery was covered briefly. The people who survived it, rebuilt after it, and built this island were left in the margins.",

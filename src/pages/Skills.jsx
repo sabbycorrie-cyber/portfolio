@@ -2,8 +2,7 @@ import React from "react";
 import "./Skills.css";
 
 function Skills() {
-    /* Each group is rendered the same way, so adding a skill later is
-       a one-line change instead of another block of JSX. */
+    // skill groups
     const groups = [
         {
             title: "Front-End Development",
@@ -66,8 +65,7 @@ function Skills() {
             <div className="skills-card">
                 <h1>Skills &amp; Technologies</h1>
 
-                {/* Two copies of the same strip so the marquee loops
-                    without a visible gap. */}
+                {/* doubled so the marquee loops cleanly */}
                 <div className="code-track" aria-hidden="true">
                     <div className="code-strip">{ticker}</div>
                     <div className="code-strip">{ticker}</div>

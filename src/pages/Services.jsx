@@ -1,7 +1,5 @@
 import "./Services.css";
 
-/* "What I Do", the capability page. No rates here: this version of
-   the portfolio is the one used for job applications. */
 function Services() {
     const areas = [
         {

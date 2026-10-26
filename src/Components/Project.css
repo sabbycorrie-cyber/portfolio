@@ -20,8 +20,7 @@
     line-height: 1.6;
 }
 
-/* The card IS the artwork: full-bleed art, a scrim rising from the
-   bottom, and the text living on top of the image. */
+/* cover art fills the card, text sits on top */
 .project-card {
     border-radius: 24px;
     display: flex;
@@ -67,9 +66,7 @@
     );
 }
 
-/* At rest a near-solid veil sits over the art, so the app's own
-   logo and screens read as soft shadows behind the text. Hovering
-   lifts the veil and the artwork lights up. */
+/* dark veil over the art, lifts on hover */
 .card-veil {
     position: absolute;
     inset: 0;
@@ -87,10 +84,10 @@
     padding: 24px 26px 22px;
 }
 
-/* When the build story is open the text reaches the top of the card,
-   so clear space for the pinned badge */
+/* keep text clear of the badge */
+.project-card:has(.project-badge) .card-body,
 .project-card:has(.card-more[open]) .card-body {
-    padding-top: 64px;
+    padding-top: 60px;
 }
 
 .project-card:hover {
@@ -98,7 +95,7 @@
     z-index: 10;
 }
 
-/* Cards float up one after another when the page loads */
+/* stagger the cards in on load */
 @media (prefers-reduced-motion: no-preference) {
     .project-card {
         opacity: 0;
@@ -141,9 +138,16 @@
     color: #fff;
 }
 
-/* "The build story" expandable, so the card stays mostly art */
+/* expandable details, pills share a row until opened */
 .card-more {
-    margin-top: 12px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 16px 8px 0 0;
+}
+
+.card-more[open] {
+    display: block;
+    margin-right: 0;
 }
 
 .card-more summary {
@@ -172,9 +176,9 @@
     outline-offset: 3px;
 }
 
-/* Launch-week chart results, worn like medals on the flagship card */
+/* chart result pills */
 .card-stats {
-    margin-top: 14px;
+    margin-top: 18px;
 }
 
 .stats-title {
@@ -206,7 +210,7 @@
     white-space: nowrap;
 }
 
-/* The home-island result leads the row in full colour */
+/* first pill filled */
 .card-stats li:first-child {
     background: var(--accent, #ffd98a);
     color: #0b0f17;
@@ -218,12 +222,11 @@
     margin-top: 8px !important;
 }
 
-/* Two expandables stack as a tidy pair of pills */
 .card-more + .card-more {
     margin-top: 10px;
 }
 
-/* Badge on the flagship card, pinned over the cover art */
+/* badge top left */
 .project-badge {
     position: absolute;
     top: 14px;
@@ -238,7 +241,7 @@
     text-transform: uppercase;
 }
 
-/* "Co-founder & developer" line under the title */
+/* role line */
 .role {
     margin-top: 0 !important;
     font-size: 13.5px;
@@ -246,8 +249,7 @@
     color: rgba(255,255,255,0.65) !important;
 }
 
-/* The first doodle: a plain dark card, text first, with the
-   screenshot tucked under the writing like a photo in an album */
+/* humble cards: dark bg, screenshot under the text */
 .project-card.v-humble {
     background: #0f1117;
     justify-content: flex-start;
@@ -279,9 +281,7 @@
     text-align: right;
 }
 
-/* The portfolio card: no image at all, just the site's own colour
-   scheme done as a quiet composition. Gradient ribbon up top, soft
-   lime and lavender glows, and the faint grid from the brand cards. */
+/* portfolio card: colour scheme only, no image */
 .project-card.v-abstract {
     background:
         radial-gradient(circle at 18% 18%, rgba(214,255,143,0.14), transparent 45%),
@@ -313,8 +313,7 @@
     background: linear-gradient(90deg, #d6ff8f, #c7b8ff);
 }
 
-/* Each project keeps its colour as an accent and glow
-   instead of a solid background */
+/* accent colour per project */
 .green-card  { --accent: #b8f28f; --glow: rgba(184,242,143,0.45); }
 .purple-card { --accent: #c4b5fd; --glow: rgba(196,181,253,0.45); }
 .blue-card   { --accent: #7dd3fc; --glow: rgba(96,165,250,0.45); }
@@ -323,7 +322,7 @@
 .clay-card   { --accent: #e6b98f; --glow: rgba(230,185,143,0.45); }
 .coral-card  { --accent: #ff9e8d; --glow: rgba(255,158,141,0.45); }
 
-/* Two across on desktop so four cards form a tidy 2x2 with no orphan */
+/* 2 columns on desktop */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -375,8 +374,7 @@
     padding: 18px 4px 0;
 }
 
-/* App Store pill sits beside the site pill, outlined so the
-   pair reads as one action with two doors */
+/* app store button next to the site button */
 .store-link {
     margin-left: auto;
     background: transparent;

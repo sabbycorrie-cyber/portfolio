@@ -31,8 +31,7 @@
     color: #00bcd4;
 }
 
-/* Underline that slides in from the left on hover.
-   The Hire Me pill opts out, since it has its own shape. */
+/* hover underline, not on the cta pill */
 .nav-links a:not(.nav-cta)::after {
     content: "";
     position: absolute;
@@ -51,12 +50,12 @@
     transform: scaleX(1);
 }
 
-/* Current page */
+/* current page */
 .nav-links a.active {
     color: #b8f28f;
 }
 
-/* The one link that should stand out */
+/* hire me pill */
 .nav-links a.nav-cta {
     padding: 8px 20px;
     border-radius: 999px;

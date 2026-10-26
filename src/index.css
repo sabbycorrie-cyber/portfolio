@@ -35,8 +35,7 @@ img {
     min-height: 100vh;
 }
 
-/* Typed text was transparent here, which made the search box look
-   broken. It now inherits the readable colour set in Project.css. */
+/* fix: input text was invisible */
 .search-bar {
     background: white;
     font-size: 18px;
@@ -47,7 +46,7 @@ img {
     color: #888;
 }
 
-/* Keyboard users need to see where they are */
+/* focus outline */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {

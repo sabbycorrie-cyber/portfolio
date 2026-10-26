@@ -21,7 +21,7 @@ function App() {
         <Route path="/project" element={<Project />} />
         <Route path="/services" element={<Services />} />
 
-        {/* Anything unrecognised goes home instead of a blank screen */}
+        {/* fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

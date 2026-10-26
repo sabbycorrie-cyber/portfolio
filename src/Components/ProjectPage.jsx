@@ -20,10 +20,30 @@ function ProjectPage() {
             cover: coverGuess246,
             role: "Co-founder & developer, Studio 246",
             github: "",
-            demo: "https://studio246.app/",
-            demoLabel: "See it at Studio 246",
+            appStore:
+                "https://apps.apple.com/us/app/guess246/id6816416499",
+            demo: "https://guess246.com/",
+            demoLabel: "guess246.com",
             tech: "React 19, Vite, Supabase (Postgres, RLS, Realtime), Google Street View Static API, PWA",
-            what: "A geography game built on 120+ real Barbadian locations across all 11 parishes. Players are dropped into a Street View photo and have to name the road and parish before the clock runs out. Three difficulty tiers, scoring with time and streak bonuses, per-difficulty leaderboards, shareable challenge links, pass-and-play, and live multiplayer rooms.",
+            what: "De Ultimate Bajan Road Test, out now on iPhone with Android next. Players are dropped onto one of 122 real Barbados roads across all 11 parishes and have seconds to name them. Get it right and the ground opens up: Bussa's uprising in 1816, the West India Regiments at the Garrison, the flag raised at midnight in 1966. Three difficulty tiers, leaderboards, challenge links and live multiplayer, with every fact researched and cited.",
+            statsTitle: "Launch week, App Store Top Paid Trivia",
+            stats: [
+                "#1 Barbados, every day since launch",
+                "#2 Canada",
+                "#7 UK",
+                "#8 US, up from a #10 debut",
+            ],
+            statsNote:
+                "Every rating so far: 5 stars. Week two under way.",
+            story: [
+                "I didn't learn the full story of Barbados in school. So we built a game that tells it.",
+                "More than nine in ten Barbadians are of African descent. Yet the history most of us were taught came largely from one side: the planters, the sugar, the trade and where it was shipped. Slavery was covered briefly. The people who survived it, rebuilt after it, and built this island were left in the margins.",
+                "As a Brown, Indigenous Barbadian woman, I know what it means to have your people's story told by someone else, or not told at all. Black, Brown and Indigenous peoples have carried some of the worst treatment this world has handed out. Our histories are connected, and all of them deserve to be lifted up, not left out.",
+                "I felt that gap as a young person. It costs more than knowledge. It costs pride, self-knowledge, and a sense of who stood where we stand now.",
+                "So we built Guess246. Black and Brown Barbadian history comes first, and every fact is researched and cited, drawing on my background in intercultural research. It's like moving through hidden archives in a ZR van, the way most of us cross the island every day.",
+                "Fun is the hook. Knowing our story is the point. I hope Bajans play it, then go and stand on these streets themselves, knowing what happened there and what it cost the people who came before.",
+                "We launched in the 60th year of Independence and our 5th as a Republic. Sixty and five. Built by two Barbadians at Studio 246.",
+            ],
             learned:
                 "How to take an app all the way to production rather than just to 'it runs on my machine': designing a Postgres schema, locking it down with Row Level Security, syncing players in real time over Supabase Realtime channels, validating Street View imagery through the metadata endpoint so players never hit a grey tile, and shipping it as an installable PWA with an offline app shell.",
             challenges:
@@ -137,9 +157,9 @@ function ProjectPage() {
             </button>
 
             <p className="portfolio-description">
-                React work from a first browser game through to a production app
-                with a Postgres backend, real-time multiplayer and a live API.
-                Search by name or technology.
+                React work from a first browser game through to a charting App
+                Store release with a Postgres backend, real-time multiplayer
+                and a live API. Search by name or technology.
             </p>
 
             <div
@@ -185,7 +205,7 @@ function ProjectPage() {
 
                                 {project.featured && (
                                     <span className="project-badge">
-                                        Flagship project
+                                        Out now on the App Store
                                     </span>
                                 )}
 
@@ -199,6 +219,26 @@ function ProjectPage() {
                                     <p className="tech">{project.tech}</p>
 
                                     <p className="card-what">{project.what}</p>
+
+                                    {project.stats && (
+                                        <div className="card-stats">
+                                            {project.statsTitle && (
+                                                <p className="stats-title">
+                                                    {project.statsTitle}
+                                                </p>
+                                            )}
+                                            <ul>
+                                                {project.stats.map((stat) => (
+                                                    <li key={stat}>{stat}</li>
+                                                ))}
+                                            </ul>
+                                            {project.statsNote && (
+                                                <p className="stats-note">
+                                                    {project.statsNote}
+                                                </p>
+                                            )}
+                                        </div>
+                                    )}
 
                                     <details className="card-more">
                                         <summary>The build story</summary>
@@ -215,6 +255,18 @@ function ProjectPage() {
                                             {project.challenges}
                                         </p>
                                     </details>
+
+                                    {project.story && (
+                                        <details className="card-more card-story">
+                                            <summary>
+                                                Why we built it
+                                            </summary>
+
+                                            {project.story.map((para) => (
+                                                <p key={para}>{para}</p>
+                                            ))}
+                                        </details>
+                                    )}
 
                                     {project.variant === "humble" && (
                                         <figure className="card-doodle">
@@ -245,6 +297,17 @@ function ProjectPage() {
                                                 alt=""
                                                 className="github-icon"
                                             />
+                                        </a>
+                                    )}
+
+                                    {project.appStore && (
+                                        <a
+                                            href={project.appStore}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="demo-link store-link"
+                                        >
+                                            App Store
                                         </a>
                                     )}
 

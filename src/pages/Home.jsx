@@ -23,15 +23,18 @@ function Home() {
                         with AI, and the toolset I am growing shows it. The
                         clearest example is{" "}
                         <a
-                            href="https://studio246.app/"
+                            href="https://apps.apple.com/us/app/guess246/id6816416499"
                             target="_blank"
                             rel="noreferrer"
                         >
                             Guess246
                         </a>
                         , a React app with a Postgres backend, real-time
-                        multiplayer and 120+ real locations across Barbados, now
-                        heading to the app stores.
+                        multiplayer and 122 real roads across Barbados, now live
+                        on the App Store. It has held #1 in Top Paid Trivia in
+                        Barbados every day since launch, and its first week
+                        brought #2 in Canada, #7 in the UK and a US debut at #10
+                        that climbed to #8.
                     </p>
 
                     <div className="hero-actions">

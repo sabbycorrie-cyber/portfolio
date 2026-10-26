@@ -172,6 +172,57 @@
     outline-offset: 3px;
 }
 
+/* Launch-week chart results, worn like medals on the flagship card */
+.card-stats {
+    margin-top: 14px;
+}
+
+.stats-title {
+    font-size: 11.5px !important;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent, #ffd98a) !important;
+    margin: 0 0 8px !important;
+}
+
+.card-stats ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-stats li {
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    border: 1px solid var(--accent, #ffd98a);
+    color: var(--accent, #ffd98a);
+    background: rgba(6,8,14,0.55);
+    white-space: nowrap;
+}
+
+/* The home-island result leads the row in full colour */
+.card-stats li:first-child {
+    background: var(--accent, #ffd98a);
+    color: #0b0f17;
+}
+
+.stats-note {
+    font-size: 12.5px !important;
+    color: rgba(255,255,255,0.6) !important;
+    margin-top: 8px !important;
+}
+
+/* Two expandables stack as a tidy pair of pills */
+.card-more + .card-more {
+    margin-top: 10px;
+}
+
 /* Badge on the flagship card, pinned over the cover art */
 .project-badge {
     position: absolute;
@@ -319,8 +370,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     width: 100%;
     padding: 18px 4px 0;
+}
+
+/* App Store pill sits beside the site pill, outlined so the
+   pair reads as one action with two doors */
+.store-link {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid var(--accent, rgba(255,255,255,0.8));
+    color: var(--accent, #fff);
+}
+
+.store-link + .demo-link {
+    margin-left: 0;
+}
+
+.store-link:hover {
+    background: var(--accent) !important;
+    color: #0b0f17;
 }
 
 .project-links a:hover {

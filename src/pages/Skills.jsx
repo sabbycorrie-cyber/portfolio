@@ -42,6 +42,19 @@ function Skills() {
             ],
         },
         {
+            title: "Testing & Quality",
+            note: "How Guess246 stays shippable.",
+            skills: [
+                "ESLint",
+                "GitHub Actions CI",
+                "Playwright release verification",
+                "API replay checks",
+                "TestFlight beta groups",
+                "Error monitoring",
+                "Analytics instrumentation",
+            ],
+        },
+        {
             title: "Tools & Workflow",
             note: "Day to day.",
             skills: [
@@ -49,7 +62,6 @@ function Skills() {
                 "GitHub",
                 "VS Code",
                 "Figma",
-                "ESLint",
                 "Agile workflow",
                 "Vibe coding",
             ],

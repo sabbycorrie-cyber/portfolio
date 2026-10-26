@@ -47,6 +47,8 @@ function ProjectPage() {
                 "How to take an app all the way to production rather than just to 'it runs on my machine': designing a Postgres schema, locking it down with Row Level Security, syncing players in real time over Supabase Realtime channels, validating Street View imagery through the metadata endpoint so players never hit a grey tile, and shipping it as an installable PWA with an offline app shell.",
             challenges:
                 "Keeping a live room in sync across devices, protecting an API key that has to ship in the browser bundle (referrer restrictions plus a hard daily quota cap), and staying inside Google's Street View terms: live imagery only, attribution never cropped.",
+            tested:
+                "ESLint across the codebase, and CI on GitHub Actions that builds the web app, the iOS archive and the Android bundle on every push, so a build that fails to compile or sign never reaches a store. Before each release, Playwright sessions replay full quiz rounds, live rooms and share links against the production backend, and every question in every deck is replayed through the API to check status, latency and that no answer leaks in the payload. Every build went to an internal TestFlight group and a nine-person Bajan tester group. In production, errors are captured and fingerprinted, a health endpoint watches the backend, and a scheduled digest reports failures by email.",
             cardClass: "gold-card",
         },
         {
@@ -253,6 +255,16 @@ function ProjectPage() {
                                             <br />
                                             {project.challenges}
                                         </p>
+
+                                        {project.tested && (
+                                            <p>
+                                                <strong>
+                                                    Testing and quality:
+                                                </strong>
+                                                <br />
+                                                {project.tested}
+                                            </p>
+                                        )}
                                     </details>
 
                                     {project.story && (

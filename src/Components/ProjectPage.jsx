@@ -11,7 +11,6 @@ import coverTapir from "../assets/covers/tapirescape.jpg";
 
 function ProjectPage() {
     const [search, setSearch] = useState("");
-    const [showProject, setShowProject] = useState(true);
 
     const project = [
         {
@@ -88,7 +87,7 @@ function ProjectPage() {
             github: "",
             demo: "https://restaurantswipe.vercel.app/",
             tech: "React, JavaScript, Geolocation, responsive design",
-            what: "Tinder for restaurants: swipe yes, no or maybe through real places near you, and when you match with a meal the number to book a table is one tap away.",
+            what: "Swipe, match, book: swipe yes, no or maybe through real places near you, and when you match with a meal the number to book a table is one tap away.",
             learned:
                 "A swipe interface running on real data: geolocation, card gestures, saved lists, and turning a match into a single tap to act.",
             challenges:
@@ -150,13 +149,6 @@ function ProjectPage() {
         <div className="page">
             <h1>My Projects</h1>
 
-            <button
-                className="project-btn"
-                onClick={() => setShowProject(!showProject)}
-            >
-                {showProject ? "Hide Projects" : "View My Projects"}
-            </button>
-
             <p className="portfolio-description">
                 React work from a first browser game through to a charting App
                 Store release with a Postgres backend, real-time multiplayer
@@ -173,11 +165,10 @@ function ProjectPage() {
                 }
             >
                 <div className="scroll-wheel"></div>
+                <span className="scroll-label">scroll</span>
             </div>
 
-            {showProject && (
-                <>
-                    <input
+            <input
                         type="text"
                         className="search-bar"
                         placeholder="Search projects..."
@@ -338,12 +329,10 @@ function ProjectPage() {
                         ))}
                     </div>
 
-                    {filteredProject.length === 0 && (
-                        <p className="no-results">
-                            No projects match “{search}”.
-                        </p>
-                    )}
-                </>
+            {filteredProject.length === 0 && (
+                <p className="no-results">
+                    No projects match “{search}”.
+                </p>
             )}
 
             <div className="contact-footer">
